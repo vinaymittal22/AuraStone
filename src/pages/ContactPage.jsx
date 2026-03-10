@@ -1,0 +1,13 @@
+import { Mail, Phone } from "lucide-react";
+import { PageHero } from "../components/PageHero";
+import { Reveal } from "../components/Reveal";
+import { faqs } from "../data/site";
+
+export function ContactPage() {
+  return (
+    <div>
+      <PageHero eyebrow="Contact Aura Stone" title="We are here to support every order, gift, and styling question." description="Reach the Aura Stone team for order assistance, product details, gifting guidance, or brand collaborations." image="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1700&q=80" />
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10"><div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]"><Reveal><div className="rounded-[1.75rem] border border-black/5 bg-white p-8 shadow-soft"><h2 className="font-serif text-4xl text-ink">Contact Details</h2><div className="mt-6 space-y-4 text-sm leading-7 text-stone-600"><p className="flex items-center gap-3"><Phone size={18} className="text-gold" /> +91 8955704980</p><p className="flex items-center gap-3"><Mail size={18} className="text-gold" /> mittal.vinay22@gmail.com</p><p>Customer support: Monday to Saturday · 10 AM to 7 PM</p><p>Designed with elegance. Made in India.</p></div></div></Reveal><Reveal delay={100}><div className="rounded-[1.75rem] border border-black/5 bg-white p-8 shadow-soft"><h2 className="font-serif text-4xl text-ink">Send a message</h2><div className="mt-6 grid gap-4 md:grid-cols-2"><input placeholder="Name" className="h-12 rounded-2xl border border-black/10 px-4 text-sm outline-none focus:border-gold" /><input placeholder="Email" className="h-12 rounded-2xl border border-black/10 px-4 text-sm outline-none focus:border-gold" /><input placeholder="Phone" className="h-12 rounded-2xl border border-black/10 px-4 text-sm outline-none focus:border-gold md:col-span-2" /><textarea placeholder="How can we help?" className="min-h-[160px] rounded-[1.5rem] border border-black/10 px-4 py-4 text-sm outline-none focus:border-gold md:col-span-2" /></div><button className="mt-6 rounded-full bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white">Send Message</button></div></Reveal></div><div className="mt-12 rounded-[1.75rem] border border-black/5 bg-white p-8 shadow-soft"><h3 className="font-serif text-3xl text-ink">FAQ Preview</h3><div className="mt-6 grid gap-6 md:grid-cols-2">{faqs.slice(0, 4).map((faq) => <div key={faq.question}><p className="font-semibold text-ink">{faq.question}</p><p className="mt-2 text-sm leading-7 text-stone-600">{faq.answer}</p></div>)}</div></div></section>
+    </div>
+  );
+}
